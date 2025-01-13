@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main(){
+    int n,in,i,j,y,flag = 0,t,g;
+    scanf("%d ",&n);
+    int a[n];
+    for (i = 0;i<n;i++){
+        scanf("%d ",&in);
+        a[i] = in;
+    }
+    for(j = 0;j<n-1;j++){
+        if(a[j]!=a[j+1]){
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 1){
+        for(i = 0;i<n-1;i++){
+            for(y = 0;y<n-i-1;y++){
+                if(a[y] >a[y+1]){
+                    t = a[y];
+                    g = a[y+1];
+                    a[y] = g;
+                    a[y+1] = t;
+                
+                }
+            }
+        }
+        printf("Arranged elements are: ");
+        for(y = 0;y<n;y++){
+            printf("%d ",a[y]);
+        }
+    }
+    else if(flag == 0){
+        printf("All elements are the same");
+    }
+}
