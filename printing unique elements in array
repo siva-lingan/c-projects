@@ -1,0 +1,22 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+int main() {
+    int a[5] = {1,1,2,3,3};
+    int s[5];
+    int c = 0;
+    int n = sizeof(a)/sizeof(a[0]);
+    for(int i = 0;i<n-1;i++){
+        if(a[i] ==a[i+1]);
+        else{
+            s[c] = a[i];
+            c++;
+        }
+    }
+    s[c++] = a[n-1];
+    for(int i = 0; i<c;i++){
+        printf("%d ",s[i]);
+    }
+
+    return 0;
+}
