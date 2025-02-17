@@ -1,0 +1,46 @@
+#include<stdio.h> 
+int main () {
+    int s;
+    scanf("%d",&s);
+    int a[s];
+    int d_c[s];
+    int t[s];
+    int *pa = a;
+    int *pd = d_c;
+    int *pt =t;
+    for (int i = 0;i<s;i++){
+        scanf("%d",pa);
+        
+        pa++;
+        
+    }
+    for (int i = 0;i<s;i++){
+        
+        scanf("%d",pd);
+        
+        pd++;
+    }
+    pa = a;
+    pd = d_c;
+    for (int i = 0;i<s;i++){
+        
+        if (*pd == 1){
+            *pt =  -(*pa);
+        }
+        else{
+            *pt = *pa;
+        }
+        pa++;
+        pd++;
+        pt++;
+        
+    }
+    pt = t;
+    for (int i = 0;i<s;i++){
+        printf("%d ",*pt);
+        pt++;
+        
+    }
+    
+    return 0;
+}
