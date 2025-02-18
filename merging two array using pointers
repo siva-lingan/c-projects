@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(){
+    int n,m,e1,e2;
+    int* pn = &n,*pm = &m,*pe1 = &e1,*pe2 = &e2;
+    scanf("%d",pn);
+    scanf("%d",pm);
+    int a[n],b[m],c[n+m];
+    int *pa = a,*pb = b,*pc = c;
+    for(int i = 0;i<n;i++){
+        scanf("%d",pe1);
+        *pa =*pe1;
+        pa++;
+    }
+    for(int i = 0;i<m;i++){
+        scanf("%d",pe2);
+        *pb =*pe2;
+        pb++;
+    }
+    pb = b;
+    for(int i = 0;i<m;i++){
+        *pa = *pb;
+        pa++;
+        pb++;
+    }
+    pa = a;
+    for(int i = 0;i<n+m;i++){
+        printf("%d ",*pa);
+        pa++;
+    }
+    return 0;
+}
